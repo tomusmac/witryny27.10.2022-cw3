@@ -1,0 +1,52 @@
+
+.banner1,.banner2,.banner3 {
+    float: left;
+}
+.banner1,.banner3 {
+    width:25%;
+    height:200px;   
+}
+.banner2 {
+    width: 50%;
+    height: 200px;
+    text-align: center;
+    font-size:250%;
+}
+.main {
+    overflow: hidden;
+    background-color: rgb(0,0,128);
+    padding:60px;
+    text-transform: uppercase;
+}
+.stopka {
+    text-align: center;
+    width:50%;
+    float:left;
+}
+.stopka2 {
+    text-align: right;
+    padding-top:100px;
+    overflow:hidden;
+}
+body {
+    font-family: Garamond;
+    background-color:rgb(30,144,255); 
+    color:white;
+}
+p:hover {
+    background-color: rgb(192,192,192);
+}
+p {
+    padding:20px;
+    font-size:200%;
+    border: 1px solid rgb(192,192,192);
+}
+
+table {
+    width:100%;
+    border-collapse: collapse;
+}
+th,td {
+    border: 1px solid rgb(192,192,192);
+    padding:10px;
+}
