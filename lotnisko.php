@@ -6,14 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Port lotniczy</title>
     <link rel="stylesheet" href="styl5.css">
-    <?php
-    setcookie("ciacho", "ciacho", time() + 60 * 60 * 2);
-    if (isset($_COOKIE["ciacho"])) {
-        $wiadomosc = "<i>Witaj ponownie na stronie lotniska</i>";
-    } else {
-        $wiadomosc = "<b>Dzień dobry! Strona lotniska używa ciasteczek</b>";
-    }
-    ?>
+    <?php setcookie("ciacho", "ciacho", time() + 60 * 60 * 2);?>
 </head>
 <body>
 <div class="banner1">
@@ -34,7 +27,18 @@
      <tr>
       </thead>
    <tbody>
-      <?php
+      <?php skrypt1();?>
+   </tbody>
+</table>
+</div>
+<div class="stopka">
+<p><?php skrypt2(); ?></p>
+</div>
+<div class="stopka2">  
+Autor: Tomek Macura   
+</div>
+<?php
+function skrypt1() {
       $conn = mysqli_connect("localhost", "root", "", "egzamin");
       $query = "SELECT czas,kierunek,nr_rejsu,status_lotu FROM przyloty ORDER BY czas ASC";
       $result = mysqli_query($conn, $query);
@@ -50,15 +54,14 @@
           echo "<td>$status</td>";
           echo "</tr>";
       }
+   }
+function skrypt2() {
+   if (isset($_COOKIE["ciacho"])) {
+       echo "<i>Witaj ponownie na stronie lotniska</i>";
+   } else {
+       echo "<b>Dzień dobry! Strona lotniska używa ciasteczek</b>";
+   }
+}
       ?>
-   </tbody>
-</table>
-</div>
-<div class="stopka">
-<p><?php echo "$wiadomosc"; ?></p>
-</div>
-<div class="stopka2">  
-Autor: Tomek Macura   
-</div>
 </body>
 </html>
